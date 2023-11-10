@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Destinations";
+    Layout = null;
+
+}
+@using assignment.Models;
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<assignment.Models.Attractions>
+@using PagedList
+@using PagedList.Mvc
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游网站</title>
+    <link href="~/Content/Destinations.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+
+<!-- 最上端 -->
+<body>
+    <div class="header w">
+        <div class="logo">
+            <a href="@Url.Action("home","Home")"><img src="~/Content/img/logo.jpg" /></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="@Url.Action("Index","Login")">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="nav2">
+        <ul>
+            <li><a href="@Url.Action("home","Home")">Home</a></li>
+            <li><a href="@Url.Action("Index","Attractions")">Ticket</a></li>
+            <li><a href="@Url.Action("Destinations","Destinations")"><div>Destinations</div></a></li>
+            <li><a href="@Url.Action("Contact","Contact")">Contact</a></li>
+        </ul>
+    </div>
+    <div class="attractions">
+        @foreach (var attraction in Model)
+        {
+            <!-- 每个景点的展示内容 -->
+            <div class="attraction">
+                <a href="@Url.Action("Details", "Destinations", new { id = attraction.AttractionID })">
+                    <h3>@attraction.CityName</h3>
+                    <img src="~/Content/img/@attraction.ImageUrl">
+                    <p>@attraction.AttractionName</p>
+                </a>
+            </div>
+        }
+    </div>
+
+
+    <!-- 分页控件 -->
+    <div class="pagination">
+        @Html.PagedListPager(Model, pageNumber => Url.Action("Destinations", new { page = pageNumber }))
+    </div>
+
+    <!--页脚-->
+
+    <footer>
+        <p>&copy; 2023 Travel Website. All rights reserved.</p>
+        <p>Email complaint: <a href="mailto:1692985870@qq.com">1692985870@qq.com</a></p>
+        <p>Validate your code: <a href="https://validator.w3.org/" target="_blank">HTML5 Validator</a> | <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS3 Validator</a></p>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+﻿/* 设置全局样式，重置默认的外边距和内边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* 设定页面背景颜色和字体样式 */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* 定义页头样式 */
+.w {
+    width: 1000px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+}
+
+.logo {
+    float: left;
+    width: 250px;
+    height: 84px;
+}
+
+.nav {
+    float: right;
+    margin-left: 1100px;
+    font-size: 6px;
+}
+
+    .nav ul li {
+        float: left;
+        margin: 0 15px;
+    }
+
+        .nav ul li a {
+            display: block;
+            height: 42px;
+            padding: 0 10px;
+            line-height: 42px;
+            font-size: 18px;
+        }
+
+            .nav ul li a:hover {
+                border-bottom: 2px solid #00a4ff;
+                color: #00a4ff;
+            }
+
+.logo img {
+    max-width: 300px;
+    max-height: 84px;
+}
+
+
+
+.nav2 {
+    text-align: center;
+    padding-left: 300px;
+    width: 100%;
+    float: left;
+    background-color: #00FFFF;
+}
+
+    .nav2 ul li {
+        float: left;
+        margin: 0 15px;
+    }
+
+        .nav2 ul li a {
+            display: block;
+            height: 42px;
+            padding: 0 10px;
+            line-height: 42px;
+            font-size: 18px;
+        }
+
+            .nav2 ul li a:hover {
+                background-color: #00a4ff;
+            }
+/* Style for the header container */
+.header2 {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+    .header2 h1 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .header2 a {
+        text-decoration: none;
+        color: #00a4ff;
+    }
+
+        .header2 a:hover {
+            text-decoration: underline;
+        }
+
+.details {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    /* Style for the attraction title */
+    .details h2
+
+{
+    color: #333;
+    margin-bottom: 10px;
+}
+/* Style for the attraction image */
+.details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Style for the additional details (City and Description) */
+.details p {
+    margin: 0;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+footer {
+    font-weight: 100;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+}

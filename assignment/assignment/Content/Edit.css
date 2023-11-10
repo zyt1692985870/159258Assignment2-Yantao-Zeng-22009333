@@ -1,0 +1,165 @@
+﻿/* 设置全局样式，重置默认的外边距和内边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* 设定页面背景颜色和字体样式 */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* 定义页头样式 */
+.w {
+    width: 1000px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+}
+
+.logo {
+    float: left;
+    width: 250px;
+    height: 84px;
+}
+
+.nav {
+    float: right;
+    margin-left: 1100px;
+    font-size: 6px;
+}
+
+    .nav ul li {
+        float: left;
+        margin: 0 15px;
+    }
+
+        .nav ul li a {
+            display: block;
+            height: 42px;
+            padding: 0 10px;
+            line-height: 42px;
+            font-size: 18px;
+        }
+
+            .nav ul li a:hover {
+                border-bottom: 2px solid #00a4ff;
+                color: #00a4ff;
+            }
+
+.logo img {
+    max-width: 300px;
+    max-height: 84px;
+}
+
+
+
+.nav2 {
+    text-align: center;
+    padding-left: 300px;
+    width: 100%;
+    float: left;
+    background-color: #00FFFF;
+}
+
+    .nav2 ul li {
+        float: left;
+        margin: 0 15px;
+    }
+
+        .nav2 ul li a {
+            display: block;
+            height: 42px;
+            padding: 0 10px;
+            line-height: 42px;
+            font-size: 18px;
+        }
+
+            .nav2 ul li a:hover {
+                background-color: #00a4ff;
+            }
+
+/* 样式表单容器 */
+form {
+    margin-top:20px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+    /* 样式表单内部元素 */
+    form div {
+        margin: 10px 0;
+    }
+
+    /* 样式表单标签 */
+    form label {
+        font-weight: bold;
+        color: #333;
+        display: block;
+    }
+
+    /* 样式表单输入框 */
+    form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    /* 样式提交按钮 */
+    form input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    /* 样式返回链接 */
+    form a {
+        color: #007bff;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+        /* 鼠标悬停样式 */
+        form a:hover {
+            text-decoration: underline;
+        }
+
+
+footer {
+    font-weight: 100;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+}

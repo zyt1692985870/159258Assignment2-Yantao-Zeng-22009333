@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+@using assignment.Models;
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<assignment.Models.Attractions>
+@using PagedList
+@using PagedList.Mvc
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游网站</title>
+    <link href="~/Content/Index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script>
+        function del(id) {
+            if (confirm("确定删除吗?")) {
+                $.post("@Url.Action("Delete", "Attractions")/" + id, null,
+                    function (data) {
+                        if (data == "ok") {
+                            alert("删除成功");
+                            window.location.href = "@Url.Action("Index","Attractions")";
+                        } else {
+                            alert("删除失败");
+                        }
+                    });
+            }
+        }
+         function applyFilter() {
+            var cityID = $("#city-filter").val();
+            window.location.href = "@Url.Action("Index","Attractions")" + "?cityID=" + cityID;
+        }
+         function search() {
+            var searchKeyword = $("#search-input").val();
+            var cityID = $("#city-filter").val();
+            var sortOrder = "@ViewBag.SortOrder";
+            window.location.href = "@Url.Action("Index", "Attractions")" + "?cityID=" + cityID + "&sortOrder=" + sortOrder + "&searchKeyword=" + searchKeyword;
+        }
+
+
+    </script>
+
+</head>
+<!-- 最上端 -->
+<body>
+    <div class="header w">
+        <div class="logo">
+            <a href="@Url.Action("home","Home")"><img src="~/Content/img/logo.jpg" /></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="@Url.Action("Index","Login")">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="nav2">
+        <ul>
+            <li><a href="@Url.Action("home","Home")">Home</a></li>
+            <li><a href="@Url.Action("Index","Attractions")">Ticket</a></li>
+            <li><a href="@Url.Action("Destinations","Destinations")"><div>Destinations</div></a></li>
+            <li><a href="@Url.Action("Contact","Contact")">Contact</a></li>
+        </ul>
+    </div>
+    <!--内容 -->
+    <div class="filter">
+        <label for="city-filter">City:</label>
+        <select id="city-filter" onchange="applyFilter()">
+            <option value="0">Select</option>
+            @foreach (var city in ViewBag.CityIdToNameMap)
+            {
+                <option value="@city.Key">@city.Value</option>
+            }
+        </select>
+    </div>
+
+    <div class="filter">
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input" />
+        <button onclick="search()">Search</button>
+    </div>
+
+
+    <table>
+        <tr>
+            <th>AttractionID</th>
+            <th>City Name</th>
+            <th>Attraction Name</th>
+            <th>Price</th>
+            <th>
+                <a href="@Url.Action("Index", new { sortOrder = "asc" })">Price ↑</a>
+                <a href="@Url.Action("Index", new { sortOrder = "desc" })">Price ↓</a>
+            </th>
+
+            <th class="creat"><a href="@Url.Action("Add","Attractions")">Creat New</a></th>
+        </tr>
+        @foreach (Attractions attraction in Model)
+        {
+            <tr>
+                <td>@attraction.AttractionID</td>
+                <td>@attraction.CityName</td>
+                <td>@attraction.AttractionName</td>
+                <td>@attraction.Price</td>
+                <td>
+
+                    <a href="/Attractions/Edit/@attraction.AttractionID">编辑</a>
+                    <a href="javascript:void(0)" onclick="del('@attraction.AttractionID')">删除</a>
+
+                </td>
+            </tr>
+        }
+    </table>
+
+    <div>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, MaximumPageNumbersToDisplay = 5 })
+
+    </div>
+
+
+
+    <!--页脚-->
+
+    <footer>
+        <p>&copy; 2023 Travel Website. All rights reserved.</p>
+        <p>Email complaint: <a href="mailto:1692985870@qq.com">1692985870@qq.com</a></p>
+        <p>Validate your code: <a href="https://validator.w3.org/" target="_blank">HTML5 Validator</a> | <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS3 Validator</a></p>
+    </footer>
+
+
+</body>
+</html>

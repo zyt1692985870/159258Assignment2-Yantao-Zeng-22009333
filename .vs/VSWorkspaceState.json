@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\assignment",
+    "\\assignment\\assignment",
+    "\\assignment\\assignment\\Controllers",
+    "\\assignment\\assignment\\Models",
+    "\\assignment\\assignment\\Views",
+    "\\assignment\\assignment\\Views\\Home",
+    "\\assignment\\assignment\\Views\\Shared",
+    "\\assignment\\MVCEntity\\Properties",
+    "\\assignment\\MVCLogic"
+  ],
+  "SelectedNode": "\\assignment\\assignment\\Controllers\\LoginController.cs",
+  "PreviewInSolutionExplorer": false
+}

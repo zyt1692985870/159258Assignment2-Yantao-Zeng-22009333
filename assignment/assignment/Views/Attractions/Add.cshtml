@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = null;
+}
+@model assignment.Models.Attractions
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游网站</title>
+    <link href="~/Content/Add.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        function success(data) {
+            if (data == "OK") {
+                alert("增加成功");
+                window.location.href = "@Url.Action("Index","Attractions")";
+            } else {
+                alert("增加失败");
+            }
+        }
+    </script>
+
+</head>
+
+<!-- 最上端 -->
+<body>
+    <div class="header w">
+        <div class="logo">
+            <a href="@Url.Action("home","Home")"><img src="~/Content/img/logo.jpg" /></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="@Url.Action("Index","Login")">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="nav2">
+        <ul>
+            <li><a href="@Url.Action("home","Home")">Home</a></li>
+            <li><a href="@Url.Action("Index","Attractions")">Ticket</a></li>
+            <li><a href="@Url.Action("Destinations","Destinations")"><div>Destinations</div></a></li>
+            <li><a href="@Url.Action("Contact","Contact")">Contact</a></li>
+        </ul>
+    </div>
+    <!--内容 -->
+    <div class="form-container">
+        @using (Ajax.BeginForm("add", "Attractions", new AjaxOptions { HttpMethod = "post", OnSuccess = "success" }))
+        {
+            <div>
+                @Html.LabelFor(u => u.AttractionID)
+            </div>
+            <div>
+                @Html.TextBoxFor(u => u.AttractionID)
+            </div>
+            <div>
+                @Html.LabelFor(u => u.CityName)
+            </div>
+            <div>
+                @Html.TextBoxFor(u => u.CityName)
+            </div>
+            <div>
+                @Html.LabelFor(u => u.AttractionName)
+            </div>
+            <div>
+                @Html.TextBoxFor(u => u.AttractionName)
+            </div>
+            <div>
+                @Html.LabelFor(u => u.Price)
+            </div>
+            <div>
+                @Html.TextBoxFor(u => u.Price)
+            </div>
+
+            <br />
+            <input type="submit" value="添加" /> <a href="@Url.Action("Index","Attractions")">返回</a>
+        }
+    </div>
+
+    <!--页脚-->
+
+    <footer>
+        <p>&copy; 2023 Travel Website. All rights reserved.</p>
+        <p>Email complaint: <a href="mailto:1692985870@qq.com">1692985870@qq.com</a></p>
+        <p>Validate your code: <a href="https://validator.w3.org/" target="_blank">HTML5 Validator</a> | <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS3 Validator</a></p>
+    </footer>
+
+
+</body>
+</html>

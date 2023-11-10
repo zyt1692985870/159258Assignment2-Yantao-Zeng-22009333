@@ -1,0 +1,170 @@
+﻿/* 设置全局样式，重置默认的外边距和内边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* 设定页面背景颜色和字体样式 */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 定义页头样式 */
+.w {
+    width: 1000px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+}
+
+.logo {
+    float: left;
+    width: 250px;
+    height: 84px;
+}
+
+.nav {
+    float: right;
+    margin-left: 1100px;
+    font-size: 6px;
+}
+
+    .nav ul li {
+        float: left;
+        margin: 0 15px;
+    }
+
+        .nav ul li a {
+            display: block;
+            height: 42px;
+            padding: 0 10px;
+            line-height: 42px;
+            font-size: 18px;
+        }
+
+            .nav ul li a:hover {
+                border-bottom: 2px solid #00a4ff;
+                color: #00a4ff;
+            }
+
+.logo img {
+    max-width: 300px;
+    max-height: 84px;
+}
+
+
+
+.nav2 {
+    text-align: center;
+    padding-left: 300px;
+    width: 100%;
+    float: left;
+    background-color: #00FFFF;
+}
+
+    .nav2 ul li {
+        float: left;
+        margin: 0 15px;
+    }
+
+        .nav2 ul li a {
+            display: block;
+            height: 42px;
+            padding: 0 10px;
+            line-height: 42px;
+            font-size: 18px;
+        }
+
+            .nav2 ul li a:hover {
+                background-color: #00a4ff;
+            }
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* 页脚样式 */
+footer {
+    margin-top: 50px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+/* 导航栏样式 */
+.header {
+    display: flex;
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+}
+

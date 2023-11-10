@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "home";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游网站</title>
+    <link rel="stylesheet" href="~/content/style.css" />
+    <link rel="stylesheet" href="~/content/picture.css" />
+    <script src="~/scripts/picture.js"></script>
+    <script src="~/Scripts/carousel.js"></script>
+
+</head>
+<!-- 最上端 -->
+<body>
+    <div class="header w">
+        <div class="logo">
+            <a href="@Url.Action("home","Home")"><img src="~/Content/img/logo.jpg" /></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="@Url.Action("Index","Login")">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="nav2">
+        <ul>
+            <li><a href="@Url.Action("home","Home")">Home</a></li>
+            <li><a href="@Url.Action("Index","Attractions")">Ticket</a></li>
+            <li><a href="@Url.Action("Destinations","Destinations")"><div>Destinations</div></a></li>
+            <li><a href="@Url.Action("Contact","Contact")">Contact</a></li>
+        </ul>
+    </div>
+ 
+    <div class="search">
+        <div class="link-block" style="display: inline-block;">
+
+        </div>
+
+    </div>
+    <!-- 图片 -->
+    <div class="banner-container">
+        <div class="banner-left-arrow">
+            <label for="banner-control-5" class="banner-control-prev">❮</label>
+        </div>
+        <div class="banner-img-container">
+            <img src="~/Content/img/home1.jpg" alt="" id="img">
+            <img src="~/Content/img/home2.jpg" alt="">
+            <img src="~/Content/img/home3.jpg" alt="">
+            <img src="~/Content/img/home4.jpg" alt="">
+            <img src="~/Content/img/home5.jpg" alt="">
+        </div>
+        <div class="banner-right-arrow">
+            <label for="banner-control-2" class="banner-control-next">❯</label>
+        </div>
+    </div>
+    <!-- 下拉选择景点 -->
+    <div>
+        <div class="select">
+            <div class="head">
+                <h2>Attractions</h2>
+            </div>
+            <div class="choose">
+                <select id="locationSelector">
+                    <option value="Beijing">Beijing</option>
+                    <option value="Shanghai">Shanghai</option>
+                    <option value="Guangzhou">Guangzhou</option>
+                    <option value="Nanjing">Nanjing</option>
+                    <option value="Tianjing" selected="selected">Tianjing</option>
+                </select>
+            </div>
+            <div class="more">
+                <a href="@Url.Action("Destinations","Destinations")"><div>more</div></a>
+            </div>
+        </div>
+        <div class="row2">
+            <ul id="rowContent">
+                <li>
+                    <a href="@Url.Action("Details", "Destinations", new { id = "1" })">
+                        <span>Eye of Tianjin</span>
+                        <img src="~/Content/img/tjbg1.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Details", "Destinations", new { id = "2" })">
+                        <span>Ancient Culture Street</span>
+                        <img src="~/Content/img/tjbg2.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Details", "Destinations", new { id = "3" })">
+                        <span>Porcelain House in Tianjin</span>
+                        <img src="~/Content/img/tjbg3.jpg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 文章 -->
+    <div>
+        <div class="novel">
+            <div>
+                <div class="head2">
+                    <h2>Travel Tips:</h2>
+                </div>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="list-item">
+                        <div class="text">
+                            </br>
+                            1.Destination selection: According to your interests and budget, choose a destination that suits you. It could be a country, a city, or a particular spot.
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="text">
+                            </br>
+                            2.Itinerary Planning: Determine the time and duration of your trip, and then make a detailed itinerary. Take into account attractions, activities and breaks to visit.
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="text">
+                            </br>
+                            3.Know your destination: Before you go, get some basic information about your chosen destination. Include the necessary travel documents, local cultural practices, climate and seasonal characteristics.
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="text">
+                            </br>
+                            4.Book flights and hotels: According to your travel schedule, book flights and hotels in advance. This saves time and money and ensures you have a comfortable stay.
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <div class="text">
+                            </br>
+                            5.Pack your bags: Choose the right clothes and items to pack according to your destination and itinerary. Remember to bring the necessary items for the trip, such as passport, ID card, charger, medicine, etc.
+                        </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Travel Website. All rights reserved.</p>
+        <p>Email complaint: <a href="mailto:1692985870@qq.com">1692985870@qq.com</a></p>
+        <p>Validate your code: <a href="https://validator.w3.org/" target="_blank">HTML5 Validator</a> | <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS3 Validator</a></p>
+    </footer>
+
+
+</body>
+</html>
